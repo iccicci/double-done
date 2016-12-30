@@ -17,7 +17,9 @@
 # Table of contents
 
 * [ABSTRACT](#abstract)
-** [Single Done desing pattern](#single-done-desing-pattern)
+  * [Single Done desing pattern](#single-done-desing-pattern)
+  * [Hard Double Done desing pattern](#hard-double-done-desing-pattern)
+  * [Soft Double Done desing pattern](#soft-double-done-desing-pattern)
 
 # ABSTRACT
 
@@ -27,5 +29,17 @@ One of the greatest aspect of __JavaScript__ is that, thanks to its other streng
 expensive_ resource of the whole software life cycle: __developers time__.
 
 ## Single Done desing pattern
+
+From now on: __SD__
+
+### Hard Doube Done desing pattern
+
+or simply: Double Done design pattern
+
+From now on: __HDD__ or simply: __DD__
+
+### Soft Doube Done desing pattern
+
+From now on: __SDD__
 
 Back to: [top](#) - [Table of contents](#table-of-contents) - [ABSTRACT](#abstract)
