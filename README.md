@@ -17,6 +17,7 @@
 # Table of contents
 
 * [ABSTRACT](#abstract)
+** [Single Done desing pattern](#single-done-desing-pattern)
 
 # ABSTRACT
 
@@ -25,4 +26,6 @@ I have always liked __JavaScript__, but when I deeply understood its power, I ha
 One of the greatest aspect of __JavaScript__ is that, thanks to its other strenght points, it helps saving the _most
 expensive_ resource of the whole software life cycle: __developers time__.
 
-Back to: [top](#) - [Table of contents](table-of-contents) - [ABSTRACT](#abstract)
+## Single Done desing pattern
+
+Back to: [top](#) - [Table of contents](#table-of-contents) - [ABSTRACT](#abstract)
