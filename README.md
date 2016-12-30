@@ -28,17 +28,17 @@ I have always liked __JavaScript__, but when I deeply understood its power, I ha
 One of the greatest aspect of __JavaScript__ is that, thanks to its other strenght points, it helps saving the _most
 expensive_ resource of the whole software life cycle: __developers time__.
 
-## Single Done desing pattern
+### Single Done desing pattern
 
 From now on: __SD__
 
-### Hard Doube Done desing pattern
+### Hard Double Done desing pattern
 
 or simply: Double Done design pattern
 
 From now on: __HDD__ or simply: __DD__
 
-### Soft Doube Done desing pattern
+### Soft Double Done desing pattern
 
 From now on: __SDD__
 
