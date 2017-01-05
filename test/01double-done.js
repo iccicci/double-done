@@ -1,8 +1,7 @@
 "use strict";
 
-var assert   = require("assert");
-var dd       = require("..");
-//var helper   = require("./helper");
+var assert = require("assert");
+var dd     = require("..");
 
 describe("double-done", function() {
 	describe("called as DD", function() {

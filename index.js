@@ -1,15 +1,31 @@
 "use strict";
 
 module.exports = function(done, doneOk) {
-	if(doneOk)
-		return doneOk;
+	var ret = function() {
+		if(doneOk)
+			return doneOk.apply(null, arguments);
 
-	return function() {
 		var args = [null];
 
-		for(var i in arguments)
+		for(var i = 0; i < arguments.length; ++i)
 			args.push(arguments[i]);
 
 		done.apply(null, args);
 	};
+
+	ret.dd = function(callbackOk) {
+		return function() {
+			if(arguments[0])
+				return done(arguments[0]);
+
+			var args = [];
+
+			for(var i = 1; i < arguments.length; ++i)
+				args.push(arguments[i]);
+
+			callbackOk.apply(null, args);
+		};
+	};
+
+	return ret;
 };
