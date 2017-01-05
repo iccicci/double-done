@@ -1,6 +1,6 @@
 {
   "name": "double-done",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Double Done design pattern",
   "scripts": {
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive test",
