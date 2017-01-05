@@ -21,7 +21,7 @@
   * [Single Done desing pattern](#single-done-desing-pattern)
   * [Hard Double Done desing pattern](#hard-double-done-desing-pattern)
   * [Soft Double Done desing pattern](#soft-double-done-desing-pattern)
-* [API definition](api-definition)
+* [API definition](#api-definition)
 
 ## Preface
 
@@ -106,10 +106,10 @@ A __DD async funciotn__ should be documentete as follows:
  # myAsyncFunctionDD(param1, done[, doneOk])
 ```
 
-in case of error, __done__ will be called with the error as first parameter; in case of success if the caller have not
-passed a __doneOk__ function (as in SD design pattern) __done__ function will be called with __null__ as first
-parameter followed by other parameters which are the _myAsyncFunctionDD_ result, otherwise __doneOk__ function will be
-called passing to it _only_ the parameters which are the _myAsyncFunctionDD_ result.
+in case of error, __done__ will be called with the error as first parameter; in case of success, if the caller have not
+passed a __doneOk__ function, (as in SD design pattern) __done__ function will be called with __null__ as first
+parameter followed by other parameters (which are the _myAsyncFunctionDD_ result), otherwise __doneOk__ function will
+be called passing to it _only_ the parameters which are the _myAsyncFunctionDD_ result.
 
 Back to: [top](#) - [Table of contents](#table-of-contents)
 
