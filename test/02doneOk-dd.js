@@ -22,14 +22,16 @@ function Test2(test, done) {
 
 Test2.prototype = new Test();
 
+function prepare(success, done) {
+	var self = this;
+
+	this.test = new Test(this, done);
+	this.test.async(success, this.dd.dd(function(res) { self.res = res; }));
+}
+
 describe("doneOk.dd", function() {
 	describe("error in async function", function() {
-		before(function(done) {
-			var self = this;
-
-			this.test = new Test(this, done);
-			this.test.async(false, this.dd.dd(function(res) { self.res = res; }));
-		});
+		before(function(done) { prepare.call(this, false, done); });
 
 		it("error", function() {
 			assert.equal(this.err.message, "test");
@@ -37,12 +39,7 @@ describe("doneOk.dd", function() {
 	});
 
 	describe("success in async function", function() {
-		before(function(done) {
-			var self = this;
-
-			this.test = new Test(this, done);
-			this.test.async(true, this.dd.dd(function(res) { self.res = res; }));
-		});
+		before(function(done) { prepare.call(this, true, done); });
 
 		it("error", function() {
 			assert.equal(this.err, null);

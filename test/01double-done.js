@@ -3,16 +3,18 @@
 var assert = require("assert");
 var dd     = require("..");
 
+function abc(a, b, c) {
+	this.a = a;
+	this.b = b;
+	this.c = c;
+	this.count++;
+}
+
 describe("double-done", function() {
 	describe("called as DD", function() {
 		before(function() {
 			this.count = 0;
-			this.doneOk = dd(null, (function(a, b, c) {
-				this.a = a;
-				this.b = b;
-				this.c = c;
-				this.count++;
-			}).bind(this));
+			this.doneOk = dd(null, abc.bind(this));
 		});
 
 		it("no parameters", function() {
@@ -37,12 +39,7 @@ describe("double-done", function() {
 	describe("called as SD", function() {
 		before(function() {
 			this.count = 0;
-			this.doneOk = dd((function(a, b, c) {
-				this.a = a;
-				this.b = b;
-				this.c = c;
-				this.count++;
-			}).bind(this));
+			this.doneOk = dd(abc.bind(this));
 		});
 
 		it("no parameters", function() {

@@ -1,18 +1,13 @@
 # double-done
 
-[![Build Status](https://travis-ci.org/iccicci/double-done.png)]
-(https://travis-ci.org/iccicci/double-done)
-[![Code Climate](https://codeclimate.com/github/iccicci/double-done/badges/gpa.svg)]
-(https://codeclimate.com/github/iccicci/double-done)
-[![Test Coverage](https://codeclimate.com/github/iccicci/double-done/badges/coverage.svg)]
-(https://codeclimate.com/github/iccicci/double-done/coverage)
+[![Build Status](https://travis-ci.org/iccicci/double-done.png)](https://travis-ci.org/iccicci/double-done)
+[![Code Climate](https://codeclimate.com/github/iccicci/double-done/badges/gpa.svg)](https://codeclimate.com/github/iccicci/double-done)
+[![Test Coverage](https://codeclimate.com/github/iccicci/double-done/badges/coverage.svg)](https://codeclimate.com/github/iccicci/double-done/coverage)
 [![Donate](http://img.shields.io/bitcoin/donate.png?color=blue)](https://www.coinbase.com/cicci)
 
 [![NPM version](https://badge.fury.io/js/double-done.svg)](https://www.npmjs.com/package/double-done)
-[![dependency status](https://david-dm.org/iccicci/double-done.svg)]
-(https://david-dm.org/iccicci/double-done)
-[![dev dependency status](https://david-dm.org/iccicci/double-done/dev-status.svg)]
-(https://david-dm.org/iccicci/double-done?type=dev)
+[![dependency status](https://david-dm.org/iccicci/double-done.svg)](https://david-dm.org/iccicci/double-done)
+[![dev dependency status](https://david-dm.org/iccicci/double-done/dev-status.svg)](https://david-dm.org/iccicci/double-done?type=dev)
 
 ## Table of contents
 
@@ -159,5 +154,9 @@ Do not hesitate to report any bug or consideration [@github](https://github.com/
 
 ## ChangeLog
 
+* 2017-01-05 - v0.0.2
+  * Cosmetics
+* 2017-01-05 - v0.0.1
+  * First release
 * 2016-12-30 - v0.0.0
   * First idea
