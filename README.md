@@ -108,6 +108,13 @@ be called passing to it _only_ the parameters which are the _myAsyncFunctionDD_ 
 
 Back to: [top](#) - [Table of contents](#table-of-contents)
 
+### Installation
+
+With [npm](https://www.npmjs.com/package/double-done):
+```sh
+npm install double-done
+```
+
 ## API definition
 
 ```javascript
@@ -146,16 +153,24 @@ function myAsyncFunctionDD(param1, done, doneOk) {
 
 Back to: [top](#) - [Table of contents](#table-of-contents)
 
-## Licence
+### Compatibility
+
+The package it tested under [several Node.js versions](https://travis-ci.org/iccicci/double-done).
+
+__Required: Node.js 4.0__
+
+### Licence
 
 [MIT Licence](https://github.com/iccicci/double-done/blob/master/LICENSE)
 
-## Bugs
+### Bugs
 
 Do not hesitate to report any bug or consideration [@github](https://github.com/iccicci/double-done/issues).
 
-## ChangeLog
+### ChangeLog
 
+* 2017-01-09 - v0.0.3
+  * README review and optimization
 * 2017-01-05 - v0.0.2
   * Cosmetics
 * 2017-01-05 - v0.0.1
