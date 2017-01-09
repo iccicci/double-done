@@ -5,25 +5,15 @@ module.exports = function(done, doneOk) {
 		if(doneOk)
 			return doneOk.apply(null, arguments);
 
-		var args = [null];
-
-		for(var i = 0; i < arguments.length; ++i)
-			args.push(arguments[i]);
-
-		done.apply(null, args);
+		done.apply(null, [null].concat(Array.from(arguments)));
 	};
 
 	ret.dd = function(callbackOk) {
-		return function() {
-			if(arguments[0])
-				return done(arguments[0]);
+		return function(err) {
+			if(err)
+				return done(err);
 
-			var args = [];
-
-			for(var i = 1; i < arguments.length; ++i)
-				args.push(arguments[i]);
-
-			callbackOk.apply(null, args);
+			callbackOk.apply(null, Array.prototype.slice.call(arguments, 1));
 		};
 	};
 

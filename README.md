@@ -20,9 +20,9 @@
 
 ## Preface
 
-I have always liked __JavaScript__, but when I deeply understood its power, I have fallen in love with it!
+I always liked __JavaScript__, but when I deeply understood its power, I felt in love with it!
 
-One of the greatest aspect of __JavaScript__ is that, thanks to its other strenght points, it helps saving the _most
+One of the greatest aspect of __JavaScript__ is that it helps saving the _most
 expensive_ resource of the whole software life cycle: __developers time__.
 
 ## ABSTRACT
@@ -31,7 +31,7 @@ expensive_ resource of the whole software life cycle: __developers time__.
 
 From now on: __SD__
 
-In my experience I found that so often I have to write an _async function_ which has to call some other async functions
+In my experience often happens that I have to write an _async function_ which has to call some other async functions
 to achieve its ojective. Many of the functions I wrote look like:
 
 ```javascript
@@ -55,21 +55,21 @@ function myAsyncFunctionSD(param1, done) {
 }
 ```
 
-After written some functions I found that continuously repeated block
+What I think is that the continuously repeated block
 
 ```javascript
   if(err)
     return done(err);
 ```
 
-was just a time waster, both when writing and reading the code.
+is just a time waster, both when writing and reading the code.
 
 ### Hard Double Done desing pattern
 
 From now on: __HDD__
 
 An environment where async functions accept two __done__ functions, one called in case of error and one called in case
-of success could help saving that time. My same async function would appear so:
+of success could help saving that time. My same async function would look like:
 
 ```javascript
 function myAsyncFunctionHDD(param1, doneErr, doneOk) {
@@ -89,13 +89,13 @@ or simply: Double Done design pattern
 
 From now on: __SDD__ or simply: __DD__
 
-I immediately realized that changing __myAsyncFunctionSD__ in __myAsyncFunctionHDD__ would be a breaking change. More
-than this I had to considerate that not always calling an HDD async function is more confortable than calling a SD
+I immediately realized that changing __myAsyncFunctionSD__ in __myAsyncFunctionHDD__ would be a breaking change. Beside
+this I had to consider that calling an HDD async function is not always more comfortable than calling a SD
 async function (i.e.: when we have to do something both in cases of error or success).
 
-_For these two reasons I decided to write this package which may help us writing DD async funciotns_.
+_For these two reasons I decided to write this package which may helps writing DD async functions_.
 
-A __DD async funciotn__ should be documentete as follows:
+A __DD async funciotn__ should be documented as follows:
 
 ```
  # myAsyncFunctionDD(param1, done[, doneOk])
@@ -111,7 +111,7 @@ Back to: [top](#) - [Table of contents](#table-of-contents)
 ## API definition
 
 ```javascript
-require('doble-done');
+require('double-done');
 ```
 
 Returns the __double-done__ utility _function_.
@@ -121,16 +121,18 @@ Returns the __double-done__ utility _function_.
 Returns the __doneOk function__ which must be called in case of success regardless if the caller passed it or not.
 
 ```javascript
+var dd = require('double-done');
+
 function myAsyncFunctionDD(param1, done, doneOk) {
   doneOk = dd(done, doneOk);
 ```
 
-From now on __done__ and __doneOk__ are the functions to call respectively in case of error or success.
+From now on __done__ and __doneOk__ are the functions to be called respectively in case of error or success.
 
 ### doneOk.dd(callbackOk)
 
-Lets us to call an SD async function writing only the __callbackOk__ function, if the called async function gets an
-error, __doneOk.dd__ makes it calling the original __done__ function.
+This function lets us call an SD async function writing only the __callbackOk__ function, if the called async function
+gets an error, __doneOk.dd__ makes it calling the original __done__ function.
 
 ```javascript
 function myAsyncFunctionDD(param1, done, doneOk) {
