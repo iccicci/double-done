@@ -11,11 +11,7 @@
   },
   "bugs": "https://github.com/iccicci/double-done/issues",
   "repository": "https://github.com/iccicci/double-done",
-  "keywords": [
-    "daemon",
-    "pid",
-    "pidfile"
-  ],
+  "keywords": ["async", "asynchronous", "callback", "done", "design", "pattern"],
   "engines": {
     "node": ">=4.0"
   },
@@ -24,7 +20,7 @@
   "readmeFilename": "README.md",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "3.12.2",
+    "eslint": "3.13.1",
     "istanbul": "0.4.5",
     "mocha": "3.2.0",
     "mocha-istanbul": "0.3.0"
