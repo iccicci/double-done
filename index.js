@@ -17,5 +17,14 @@ module.exports = function(done, doneOk) {
 		};
 	};
 
+	ret.try = function(func, callbackOk) {
+		var ret;
+
+		try { ret = func(); }
+		catch(e) { return done(e); }
+
+		callbackOk(ret);
+	};
+
 	return ret;
 };
