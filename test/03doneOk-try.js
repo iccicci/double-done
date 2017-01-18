@@ -3,21 +3,30 @@
 var assert = require("assert");
 var dd     = require("..");
 
-function async(ok, done) {
-	process.nextTick(ok ? function() { done(null, "test"); } : function() { done(new Error("test")); });
-	process.nextTick(this.done);
+function throwing(ok) {
+	if(ok)
+		return "test";
+
+	throw new Error("test");
 }
 
-function throwing(err) {
-	if(err)
-		throw new Error("test");
-
-	return "test";
+function asyn(ok, done, doneOk) {
+	doneOk = dd(done, doneOk);
+	doneOk.try(throwing.bind(null, ok), doneOk);
 }
 
 describe("doneOk.try", function() {
 	describe("error in throwing function", function() {
-		before(function(done) { prepare.call(this, false, done); });
+		before(function(done) {
+			var self = this;
+
+			asyn(false, function(err, test) {
+				self.err = err;
+				self.res = test;
+
+				done();
+			});
+		});
 
 		it("error", function() {
 			assert.equal(this.err.message, "test");
@@ -25,7 +34,16 @@ describe("doneOk.try", function() {
 	});
 
 	describe("success in throwing function", function() {
-		before(function(done) { prepare.call(this, true, done); });
+		before(function(done) {
+			var self = this;
+
+			asyn(true, function(err, test) {
+				self.err = err;
+				self.res = test;
+
+				done();
+			});
+		});
 
 		it("error", function() {
 			assert.equal(this.err, null);
