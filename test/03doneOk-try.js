@@ -15,17 +15,19 @@ function asyn(ok, done, doneOk) {
 	doneOk.try(throwing.bind(null, ok), doneOk);
 }
 
+function createDone(self, done) {
+	return function(err, test) {
+		self.err = err;
+		self.res = test;
+
+		done();
+	}
+}
+
 describe("doneOk.try", function() {
 	describe("error in throwing function", function() {
 		before(function(done) {
-			var self = this;
-
-			asyn(false, function(err, test) {
-				self.err = err;
-				self.res = test;
-
-				done();
-			});
+			asyn(false, createDone(this, done));
 		});
 
 		it("error", function() {
@@ -35,14 +37,7 @@ describe("doneOk.try", function() {
 
 	describe("success in throwing function", function() {
 		before(function(done) {
-			var self = this;
-
-			asyn(true, function(err, test) {
-				self.err = err;
-				self.res = test;
-
-				done();
-			});
+			asyn(true, createDone(this, done));
 		});
 
 		it("error", function() {
