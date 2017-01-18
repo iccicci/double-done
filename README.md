@@ -151,6 +151,34 @@ function myAsyncFunctionDD(param1, done, doneOk) {
   }));
 ```
 
+### doneOk.try(throwing, callbackOk)
+
+This utility function helps to write more compact code in another common case: when we need to call a function which
+may _throw_ an exception, in an async function. Following two code snippets have exactly the same effect.
+
+```javascript
+function myAsyncFunction(param1, done, doneOk) {
+  var ret;
+
+  doneOk = dd(done, doneOk);
+
+  try { ret = throwingFunction(param1); }
+  catch(e) { return done(e); }
+
+  doneOk(somethingElse(ret));
+}
+```
+
+```javascript
+function myAsyncFunction(param1, done, doneOk) {
+  doneOk = dd(done, doneOk);
+
+  doneOk.try(throwingFunction.bind(null, param1), function(ret) {
+    doneOk(somethingElse(ret));
+  });
+}
+```
+
 Back to: [top](#) - [Table of contents](#table-of-contents)
 
 ### Compatibility
@@ -169,6 +197,8 @@ Do not hesitate to report any bug or consideration [@github](https://github.com/
 
 ### ChangeLog
 
+* 2017-01-18 - v0.0.5
+  * Added doneOk.try
 * 2017-01-17 - v0.0.4
   * Dependencies update
 * 2017-01-09 - v0.0.3
