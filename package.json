@@ -1,6 +1,6 @@
 {
   "name": "double-done",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Double Done design pattern",
   "scripts": {
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive test",
@@ -11,7 +11,14 @@
   },
   "bugs": "https://github.com/iccicci/double-done/issues",
   "repository": "https://github.com/iccicci/double-done",
-  "keywords": [ "pattern", "design", "done", "callback", "asynchronous", "async" ],
+  "keywords": [
+    "pattern",
+    "design",
+    "done",
+    "callback",
+    "asynchronous",
+    "async"
+  ],
   "engines": {
     "node": ">=4.0"
   },
