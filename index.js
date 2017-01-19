@@ -21,7 +21,7 @@ module.exports = function(done, doneOk) {
 		var ret;
 
 		try { ret = func(); }
-		catch(e) { return done(e); }
+		catch(e) { return process.nextTick(done.bind(null, e)); }
 
 		callbackOk(ret);
 	};

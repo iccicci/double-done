@@ -158,12 +158,12 @@ may _throw_ an exception, in an async function. Following two code snippets have
 
 ```javascript
 function myAsyncFunction(param1, done, doneOk) {
-  var ret;
-
   doneOk = dd(done, doneOk);
 
+  var ret;
+
   try { ret = throwingFunction(param1); }
-  catch(e) { return done(e); }
+  catch(e) { return process.nextTick(done.bind(null, e)); }
 
   doneOk(somethingElse(ret));
 }
@@ -197,6 +197,8 @@ Do not hesitate to report any bug or consideration [@github](https://github.com/
 
 ### ChangeLog
 
+* 2017-01-19 - v0.1.0
+  * Fixed documentation
 * 2017-01-18 - v0.0.5
   * Added doneOk.try
 * 2017-01-17 - v0.0.4

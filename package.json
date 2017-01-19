@@ -11,14 +11,7 @@
   },
   "bugs": "https://github.com/iccicci/double-done/issues",
   "repository": "https://github.com/iccicci/double-done",
-  "keywords": [
-    "async",
-    "asynchronous",
-    "callback",
-    "done",
-    "design",
-    "pattern"
-  ],
+  "keywords": [ "pattern", "design", "done", "callback", "asynchronous", "async" ],
   "engines": {
     "node": ">=4.0"
   },
