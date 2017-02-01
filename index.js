@@ -5,7 +5,12 @@ module.exports = function(done, doneOk) {
 		if(doneOk)
 			return doneOk.apply(null, arguments);
 
-		done.apply(null, [null].concat(Array.from(arguments)));
+		var args = [null];
+
+		for(var i = 0; i < arguments.length; ++i)
+			args.push(arguments[i]);
+
+		done.apply(null, args);
 	};
 
 	ret.dd = function(callbackOk) {
