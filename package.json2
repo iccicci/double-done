@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "description": "Double Done design pattern",
   "scripts": {
-    "all": "npm run npmignore && npm run eslint && npm run coverage",
-    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive test",
-    "eslint": "./node_modules/.bin/eslint *.js test/*js",
-    "install": "if [[ `node --version` =~ ^v0 ]] ; then grep -v eslint package.json | grep -v istanbul > package.json",
-    "npmignore": "echo '.codeclimate.yml\\n.eslintrc\\n.gitignore\\n.travis.yml\\nsleep.js\\ntest' > .npmignore ; cat .gitignore >> .npmignore",
     "test": "./node_modules/.bin/_mocha test"
   },
   "bugs": "https://github.com/iccicci/double-done/issues",
@@ -28,9 +23,6 @@
   "readmeFilename": "README.md",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "3.13.1",
-    "istanbul": "0.4.5",
-    "mocha-istanbul": "0.3.0",
-    "mocha": "3.2.0"
+    "mocha": "3.2.0",
   }
 }
