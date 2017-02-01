@@ -6,7 +6,7 @@
     "all": "npm run npmignore && npm run eslint && npm run coverage",
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive test",
     "eslint": "./node_modules/.bin/eslint *.js test/*js",
-    "install": "if [[ `node --version` =~ ^v0 ]] ; then grep -v eslint package.json | grep -v istanbul > package.json",
+    "install": "if [[ `node --version` =~ ^v0 ]] ; then grep -v eslint package.json | grep -v istanbul > package.json ; fi",
     "npmignore": "echo '.codeclimate.yml\\n.eslintrc\\n.gitignore\\n.travis.yml\\nsleep.js\\ntest' > .npmignore ; cat .gitignore >> .npmignore",
     "test": "./node_modules/.bin/_mocha test"
   },
