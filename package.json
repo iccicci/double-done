@@ -20,12 +20,11 @@
     "async"
   ],
   "engines": {
-    "node": ">=0.6"
+    "node": ">=0.10"
   },
   "author": "Daniele Ricci <daniele.icc@gmail.com> (https://github.com/iccicci)",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "dependencies": {},
   "devDependencies": {
     "eslint": "3.13.1",
     "istanbul": "0.4.5",

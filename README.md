@@ -185,7 +185,7 @@ Back to: [top](#) - [Table of contents](#table-of-contents)
 
 The package it tested under [several Node.js versions](https://travis-ci.org/iccicci/double-done).
 
-__Required: Node.js 4.0__
+__Required: Node.js 0.10__
 
 ### Licence
 
@@ -197,6 +197,8 @@ Do not hesitate to report any bug or consideration [@github](https://github.com/
 
 ### ChangeLog
 
+* 2017-02-01 - v0.1.1
+  * Enabled __node.js__ v0.10
 * 2017-01-19 - v0.1.0
   * Fixed documentation
 * 2017-01-18 - v0.0.5
