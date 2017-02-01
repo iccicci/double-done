@@ -40,8 +40,5 @@ addons:
   code_climate:
     repo_token: 8a41dd92ec7457de70130c4b7baecc0aa47d15c104346a47ae283ad6a9289507
 
-before_script:
-  - node sleep.js
-
 after_script:
-  - if [[ `node --version` =~ ^v6.9 ]] ; npm install codeclimate-test-reporter ; codeclimate-test-reporter < coverage/lcov.info ; fi
+  - if [[ `node --version` =~ ^v6.9 ]] ; then npm install codeclimate-test-reporter ; codeclimate-test-reporter < coverage/lcov.info ; fi
